@@ -17,11 +17,11 @@ const app=express();
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended: true}));
 
-app.get(path.join(__dirname,'/'),(req,res)=>{
+app.get('/', async (req,res)=>{
     res.sendFile(path.join(__dirname,'index.html'));
 })
 
-app.get(path.join(__dirname,'register'),(req,res)=>{
+app.get('regitser', async (req,res)=>{
     res.sendFile(path.join(__dirname,'register.html'));
 });
 
@@ -48,7 +48,7 @@ app.post(path.join(__dirname,'register'),async (req,res)=>{
 
 });
 
-app.get(path.join(__dirname,'login'),(req,res)=>{
+app.get(path.join(__dirname,'login'), async (req,res)=>{
     res.sendFile(path.join(__dirname,'login.html'));
 });
 
