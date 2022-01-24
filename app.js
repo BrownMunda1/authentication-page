@@ -17,7 +17,7 @@ const app=express();
 app.use(bodyparser.json());
 app.use(bodyparser.urlencoded({extended: true}));
 
-app.get('/',(req,res)=>{
+app.get(path.join(__dirname,'/'),(req,res)=>{
     res.sendFile(path.join(__dirname,'index.html'));
 })
 
