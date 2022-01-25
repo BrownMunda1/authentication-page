@@ -21,11 +21,11 @@ app.get('/', async (req,res)=>{
     res.sendFile(path.join(__dirname,'index.html'));
 })
 
-app.get('regitser', async (req,res)=>{
+app.get('/register', async (req,res)=>{
     res.sendFile(path.join(__dirname,'register.html'));
 });
 
-app.post(path.join(__dirname,'register'),async (req,res)=>{
+app.post('register',async (req,res)=>{
     try {
         let temp=new user(req.body);
         const password=temp.password;
@@ -48,11 +48,11 @@ app.post(path.join(__dirname,'register'),async (req,res)=>{
 
 });
 
-app.get(path.join(__dirname,'login'), async (req,res)=>{
+app.get('/login', async (req,res)=>{
     res.sendFile(path.join(__dirname,'login.html'));
 });
 
-app.post(path.join(__dirname,'login'), async (req,res)=>{
+app.post('/login', async (req,res)=>{
     try {
         const username=req.body.username;
         const password= req.body.password;
