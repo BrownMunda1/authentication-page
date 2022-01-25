@@ -25,7 +25,7 @@ app.get('/register', async (req,res)=>{
     res.sendFile(path.join(__dirname,'register.html'));
 });
 
-app.post('register',async (req,res)=>{
+app.post('/register',async (req,res)=>{
     try {
         let temp=new user(req.body);
         const password=temp.password;
